@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  movie-catalog-db:
+    container_name: movie-catalog-db
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: movie-catalog-db
+      MONGO_INITDB_ROOT_USERNAME: movie-catalog
+      MONGO_INITDB_ROOT_PASSWORD: movie-catalog
+  
+  movie-catalog-redis:
+    container_name: movie-catalog-redis
+    image: redis
+    volumes:
+      -  ./data:/data
+    ports:
+      - 6379:6379
