@@ -10,12 +10,12 @@ import { CacheModule } from '@nestjs/cache-manager';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    // MongooseModule.forRoot(process.env.DB_URI, { dbName: process.env.DB_NAME }),
+    MongooseModule.forRoot(process.env.DB_URI, { dbName: process.env.DB_NAME }),
     CacheModule.register({ isGlobal: true }),
-    // UserModule,
-    // MovieModule,
-    // OmdbModule,
-    // AuthModule,
+    UserModule,
+    MovieModule,
+    OmdbModule,
+    AuthModule,
   ]
 })
 export class AppModule {}
