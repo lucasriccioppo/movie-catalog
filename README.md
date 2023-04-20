@@ -37,3 +37,13 @@ Foi implementada um documentação do _Swagger_ na aplicação. Através de lá 
 `http://localhost:3000/docs`
 
 (caso a variável de ambiente PORT tenha sido alterada, é necessário alterar a porta 3000 na url acima para o valor setado no .env)
+
+### Deploy
+
+Foi feito o deploy da aplicação da plataforma Railway, disponível através da url:
+
+`movie-catalog-production-128e.up.railway.app`
+
+Para facilitar a verificação, também foi disponibilizado a documentação do _Swagger_ no ambiente de deploy, disponível em:
+
+`movie-catalog-production-128e.up.railway.app/docs`
