@@ -8,7 +8,21 @@ import { LoginDto } from './dto/login.dto';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @ApiBody({ description: 'Login with email and password' })
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        email: {
+          type: 'string',
+          example: 'johndoe@teste.com'
+        },
+        password: {
+          type: 'string',
+          example: '123456'
+        }
+      }
+    }
+  })
   @HttpCode(HttpStatus.OK)
   @Post('login')
   signIn(@Body() loginData: LoginDto) {

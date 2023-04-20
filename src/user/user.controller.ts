@@ -9,7 +9,26 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @ApiBody({ description: 'Create a new user' })
+
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        name: {
+          type: 'string',
+          example: 'John Doe'
+        },
+        email: {
+          type: 'string',
+          example: 'johndoe@teste.com'
+        },
+        password: {
+          type: 'string',
+          example: '123456'
+        }
+      }
+    }
+  })
   @Post()
   async create(@Body() user: CreateUserDto): Promise<User> {
     return await this.userService.create(user);
